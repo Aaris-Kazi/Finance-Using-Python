@@ -16,7 +16,6 @@ def main():
     elif s == 3:
         actual(df['Date'], df['Close'])
     elif s == 4:
-        
         overall(df)
     
 if __name__ == "__main__":
