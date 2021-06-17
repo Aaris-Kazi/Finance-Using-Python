@@ -8,7 +8,8 @@ def finance():
     # print(ticker)
     ticker_df = ticker.history(period= '1M', interval= '1D',start= '2021-05-15', end=datetime.date.today())
     ticker_df.to_csv('google.csv')
-    return ticker_df
+    print('CSV has been initialised!')
+    
 
 def bypd():
     df = web.DataReader('TSLA', 'yahoo', '2021-05-15', datetime.date.today())
