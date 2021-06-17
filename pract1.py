@@ -1,7 +1,8 @@
 import yfinance as yf
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
-
+from sklearn.linear_model import LinearRegression
 symbol = 'GOOGL'
 ticker = yf.Ticker(symbol)
 # print(ticker)
@@ -14,6 +15,20 @@ stocks = pd.DataFrame({
     "Date": days,
     "Volume": ticker_df['Volume']
 })
-# print(stocks)
-plt.plot(stocks['Date'], stocks['Volume'])
-plt.show()
+days = []
+for i in stocks['Date']:
+    days.append(i)
+days = np.array(days)
+days.reshape(-1, 1)
+volume = []
+for i in stocks['Volume']:
+    volume.append(i)
+volume = np.array(volume)
+volume.reshape(-1, 1)
+# print(days)
+# print(volume)
+reg = LinearRegression().fit(days, volume)
+print(LinearRegression.score())
+# plt.grid(True)
+# plt.plot(days, volume)
+# plt.show()
