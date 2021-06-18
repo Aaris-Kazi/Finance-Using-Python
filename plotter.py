@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-plt.style.use('dark_background')
+plt.style.use('fivethirtyeight')
 def actual(x, y):
     plt.plot(x, y)
     plt.grid(True)
