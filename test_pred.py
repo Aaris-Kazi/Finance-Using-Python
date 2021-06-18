@@ -3,6 +3,7 @@ from matplotlib import style
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
+from sklearn import svm
 
 style.use('fivethirtyeight')
 df = pd.read_csv('google.csv')
@@ -35,3 +36,21 @@ plt.plot(dummy_dates, close)
 plt.scatter(a,b)
 plt.legend(['Actual', 'Predicted'])
 plt.show()
+def forsvm():
+    
+    x = np.array([
+        [0],[1],[2],[3],[4]
+        ]) 
+    y = np.array([
+        [-1],[1],[3],[5],[7]
+        ])
+    # clf = svm.SVC() # 7
+    # clf = svm.NuSVC() # 7
+    clf = svm.LinearSVC() # 7
+    clf.fit(x, y)
+    i = np.array([[10]])
+    j = clf.predict(i)
+    print(j)
+    plt.plot(x, y)
+    plt.scatter(i, j)
+    plt.show()

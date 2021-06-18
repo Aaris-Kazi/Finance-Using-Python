@@ -1,8 +1,6 @@
 from finance_value import finance
-import pandas as pd
-import numpy as np
 from plotter import *
-from sklearn.linear_model import LinearRegression
+from predictor import *
 
 def main():
     banner = "1: To load csv (GOOGLE)\n 2: Get Info \n 3: Graph of Stonks \n 4: Graph of Overall"
@@ -18,7 +16,8 @@ def main():
     elif s == 4:
         overall(df)
     elif s == 5:
-        overall(df)
+        # forsvm()
+        forlinear()
     else:
         print('Please CHoose the option in the given value')
     
