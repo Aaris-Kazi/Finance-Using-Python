@@ -3,7 +3,7 @@ from plotter import *
 from predictor import *
 
 def main():
-    banner = "1: To load csv (GOOGLE)\n 2: Get Info \n 3: Graph of Stonks \n 4: Graph of Overall"
+    banner = "1: To load csv (GOOGLE)\n 2: Get Info \n 3: Graph of Stonks \n 4: Graph of Overall \n 5: Predict the Graph"
     print(banner)
     s = int(input('Select Value:'))
     df = pd.read_csv('google.csv')

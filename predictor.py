@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn import svm
-
+from plotter import chart_predict
 style.use('fivethirtyeight')
 def forlinear():
     
@@ -34,10 +34,11 @@ def forlinear():
     # print(a)
     b = reg.predict(a)
     # print(b)
-    plt.plot(dummy_dates, close)
-    plt.scatter(a,b)
-    plt.legend(['Actual', 'Predicted'])
-    plt.show()
+    # plt.plot(dummy_dates, close)
+    # plt.scatter(a,b)
+    # plt.legend(['Actual', 'Predicted'])
+    # plt.show()
+    chart_predict(dummy_dates, close, a, b)
 def forsvm():
     x = np.array([
         [0],[1],[2],[3],[4]
