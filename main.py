@@ -17,6 +17,10 @@ def main():
         actual(df['Date'], df['Close'])
     elif s == 4:
         overall(df)
+    elif s == 5:
+        overall(df)
+    else:
+        print('Please CHoose the option in the given value')
     
 if __name__ == "__main__":
     main()
