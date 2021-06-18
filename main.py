@@ -1,5 +1,5 @@
 from finance_value import finance
-from plotter import *
+from plotter import actual, overall
 from predictor import *
 
 def main():
