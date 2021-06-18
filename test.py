@@ -25,7 +25,12 @@ df = pd.DataFrame({'time': data_time, 'count': data_count})
 df.time = pd.to_datetime(df.time)
 
 regr = linear_model.LinearRegression()
-regr.fit(df.time.values.reshape(-1, 1), df['count'].reshape(-1, 1))
+time = df.time.values
+time = time.reshape(-1, 1); time
+print(time)
+count =df['count'].values
+count = count.reshape(-1, 1); count
+regr.fit(time, count)
 
 # Make predictions using the testing set
 y_pred = regr.predict(df.time.values.astype(float).reshape(-1, 1))
