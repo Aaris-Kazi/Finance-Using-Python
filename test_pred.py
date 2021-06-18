@@ -12,12 +12,17 @@ days = days.reshape(-1, 1); days
 
 close = df['Close'].values
 close = close.reshape(-1, 1); close
-a = np.asarray(['2021-06-18'])
+a = np.asarray(['2021-06-19'])
 dt = pd.DataFrame({
     "pred": a
 })
+
 dt.pred = pd.to_datetime(dt.pred)
 print(dt.pred.values.astype(float).reshape(-1, 1))
 # print(a.values.astype(float))
 reg = LinearRegression().fit(close, days)
-print(reg.predict(dt.pred.values.astype(float).reshape(-1, 1)))
+b = reg.predict(dt.pred.values.astype(float).reshape(-1, 1))
+print('%4f'%float(b))
+plt.plot(days, close)
+# plt.scatter(a,b)
+plt.show()
