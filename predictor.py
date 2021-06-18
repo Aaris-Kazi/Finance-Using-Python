@@ -1,11 +1,9 @@
-import matplotlib.pyplot as plt
-from matplotlib import style
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn import svm
 from plotter import chart_predict
-style.use('fivethirtyeight')
+
 def forlinear():
     
     df = pd.read_csv('google.csv')
@@ -53,6 +51,4 @@ def forsvm():
     i = np.array([[10]])
     j = clf.predict(i)
     print(j)
-    plt.plot(x, y)
-    plt.scatter(i, j)
-    plt.show()
+    chart_predict(x, y, i, j)
