@@ -10,15 +10,14 @@ ax = fig.add_subplot(1,1,1)
 def update(i):
     xs = []
     ys = []
-    df = pd.read_csv('google.csv')
-    n = len(df['Volume'])
+    df = pd.read_csv('test.csv')
+    n = len(df['Close'])
     for i in range(n):
         xs.append(df.Date[i])
-        ys.append(df.Volume[i])
+        ys.append(df.Close[i])
         
-    time.sleep(1)
     ax.clear()
     ax.plot(xs, ys)
 
-ani = animated.FuncAnimation(fig, update, interval =1)
+ani = animated.FuncAnimation(fig, update, frames= 3,interval =2)
 plt.show()
