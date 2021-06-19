@@ -38,17 +38,22 @@ def forlinear():
     # plt.show()
     chart_predict(dummy_dates, close, a, b)
 def forsvm():
-    x = np.array([
-        [0],[1],[2],[3],[4]
-        ]) 
-    y = np.array([
-        [-1],[1],[3],[5],[7]
-        ])
-    # clf = svm.SVC() # 7
+    df = pd.read_csv('google.csv')
+    dummy_dates = []
+    for i in range(len(df['Date'])):
+        dummy_dates.append(i)
+    dummy_dates = np.array(dummy_dates).reshape(-1, 1)
+    
+    close = df['Close']
+    # x = [[0, 0], [1, 1]]
+    # y = [0, 1]
+    # close = close.reshape(-1, 1); close
+    print(dummy_dates)
+    clf = svm.SVC(decision_function_shape= 'ovo') # 7
     # clf = svm.NuSVC() # 7
-    clf = svm.LinearSVC() # 7
-    clf.fit(x, y)
-    i = np.array([[10]])
-    j = clf.predict(i)
-    print(j)
-    chart_predict(x, y, i, j)
+    # clf = svm.LinearSVC() # 7
+    # clf.fit(dummy_dates, close)
+    # a = np.array([[22],[23],[24],[25],[26]])
+    # b = clf.predict(a)
+    # print(b)
+    # chart_predict(dummy_dates, close, a, b)
