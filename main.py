@@ -16,8 +16,8 @@ def main():
     elif s == 4:
         overall(df)
     elif s == 5:
-        forsvm()
-        # forlinear()
+        # forsvm()
+        forlinear()
     else:
         print('Please CHoose the option in the given value')
     

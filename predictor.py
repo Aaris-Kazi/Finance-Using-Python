@@ -43,16 +43,17 @@ def forsvm():
     for i in range(len(df['Date'])):
         dummy_dates.append(i)
     dummy_dates = np.array(dummy_dates).reshape(-1, 1)
-    
-    close = df['Close']
+    print(dummy_dates)
+    close = df['Close'].values
+    print(close)
     # x = [[0, 0], [1, 1]]
     # y = [0, 1]
     # close = close.reshape(-1, 1); close
-    print(dummy_dates)
+    
     clf = svm.SVC(decision_function_shape= 'ovo') # 7
     # clf = svm.NuSVC() # 7
     # clf = svm.LinearSVC() # 7
-    # clf.fit(dummy_dates, close)
+    clf.fit(dummy_dates, close)
     # a = np.array([[22],[23],[24],[25],[26]])
     # b = clf.predict(a)
     # print(b)
