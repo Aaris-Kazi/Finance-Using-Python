@@ -1,7 +1,11 @@
 import yfinance as yf
 import datetime
 import pandas_datareader.data as web
+import os
 # print(datetime.date.today())
+def reload():
+    os.remove("google.csv")
+    finance()
 def finance():
     symbol = 'GOOGL'
     ticker = yf.Ticker(symbol)
