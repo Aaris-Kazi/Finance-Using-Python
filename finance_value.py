@@ -6,6 +6,7 @@ import os
 def reload():
     os.remove("google.csv")
     finance()
+    
 def finance():
     symbol = 'GOOGL'
     ticker = yf.Ticker(symbol)
