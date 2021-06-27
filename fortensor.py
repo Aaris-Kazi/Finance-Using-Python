@@ -47,9 +47,10 @@ class Model:
         forget_bias = 0.1,
     ):
         def lstm_cell(size_layer):
-            return tf.nn.rnn_cell.LSTMCell(size_layer, state_is_tuple = False)
+            return tf.compat.v1.nn.rnn_cell.LSTMCell(size_layer, state_is_tuple = False)
 
-        rnn_cells = tf.nn.rnn_cell.MultiRNNCell(
+
+        rnn_cells = tf.compat.v1.nn.rnn_cell.MultiRNNCell(
             [lstm_cell(size_layer) for _ in range(num_layers)],
             state_is_tuple = False,
         )
